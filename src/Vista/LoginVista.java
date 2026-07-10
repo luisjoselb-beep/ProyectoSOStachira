@@ -11,7 +11,7 @@ public class LoginVista extends javax.swing.JFrame {
 
     public LoginVista() {
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 //Holaaaaa
     @SuppressWarnings("unchecked")
@@ -30,7 +30,6 @@ public class LoginVista extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setExtendedState(6);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setForeground(new java.awt.Color(0, 102, 204));
