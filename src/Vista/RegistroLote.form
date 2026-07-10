@@ -148,15 +148,15 @@
                                   <Component id="checkEnvio" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="btnAtras" min="-2" pref="81" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="58" max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAlternar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="77" max="32767" attributes="0"/>
+                              <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="btnMostrar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -198,16 +198,21 @@
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="checkEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton4" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Component id="btnAlternar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnRegistrar" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="btnMostrar" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="24" max="32767" attributes="0"/>
@@ -356,7 +361,7 @@
                 <Property name="text" type="java.lang.String" value="Confirmar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnAlternar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
@@ -370,10 +375,10 @@
                 <Property name="text" type="java.lang.String" value="Alternar Estado Envio"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlternarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btnAtras">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -387,7 +392,7 @@
                 <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnMostrar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="0" red="0" type="rgb"/>
@@ -401,10 +406,10 @@
                 <Property name="text" type="java.lang.String" value="Mostrar Registro"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="btnRegistrar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="0" red="0" type="rgb"/>

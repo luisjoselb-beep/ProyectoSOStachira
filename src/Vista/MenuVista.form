@@ -47,15 +47,15 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel5" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="104" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,12 +93,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Historic" size="19" style="0"/>
+              <Font name="Serif" size="21" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Menu Principal"/>
+            <Property name="text" type="java.lang.String" value="Men&#xfa; Principal"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel5">
@@ -113,43 +113,40 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnAccionC" min="-2" pref="118" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="btnAccionD" min="-2" pref="118" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="btnAccionB" min="-2" pref="118" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnAccionC" max="32767" attributes="0"/>
+                          <Component id="btnAccionA" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnAccionD" pref="148" max="32767" attributes="0"/>
+                          <Component id="btnAccionB" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="btnAccionA" min="-2" pref="118" max="-2" attributes="0"/>
-                          <EmptySpace pref="382" max="32767" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="btnSalir" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="btnAccionB" min="-2" pref="80" max="-2" attributes="0"/>
-                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnAccionC" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnAccionB" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnAccionD" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="btnAccionC" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnAccionA" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="btnAccionA" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace pref="171" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnSalir" min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -157,23 +154,65 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnAccionB">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AccionB"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gesti&#xf3;n Recursos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccionA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AccionA"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Suministros Cr&#xed;ticos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccionD">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AccionD"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Inventario General"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccionC">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AccionC"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sectores Acopio"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSalir">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="0" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Salir"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

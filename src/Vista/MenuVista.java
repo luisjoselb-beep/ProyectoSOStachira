@@ -36,6 +36,7 @@ public class MenuVista extends javax.swing.JFrame {
         btnAccionA = new javax.swing.JButton();
         btnAccionD = new javax.swing.JButton();
         btnAccionC = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,19 +49,38 @@ public class MenuVista extends javax.swing.JFrame {
         jLabel1.setText("Proyecto S.O.S Táchira");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 0, 19)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 21)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Menu Principal");
+        jLabel2.setText("Menú Principal");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnAccionB.setText("AccionB");
+        btnAccionB.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnAccionB.setForeground(new java.awt.Color(0, 102, 255));
+        btnAccionB.setText("Gestión Recursos");
 
-        btnAccionA.setText("AccionA");
+        btnAccionA.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnAccionA.setForeground(new java.awt.Color(0, 102, 255));
+        btnAccionA.setText("Suministros Críticos");
 
-        btnAccionD.setText("AccionD");
+        btnAccionD.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnAccionD.setForeground(new java.awt.Color(0, 102, 255));
+        btnAccionD.setText("Inventario General");
 
-        btnAccionC.setText("AccionC");
+        btnAccionC.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnAccionC.setForeground(new java.awt.Color(0, 102, 255));
+        btnAccionC.setText("Sectores Acopio");
+
+        btnSalir.setBackground(new java.awt.Color(255, 0, 51));
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.setToolTipText("");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -68,34 +88,33 @@ public class MenuVista extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnAccionC, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(btnAccionD, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnAccionB, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(175, 175, 175))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(120, 120, 120)
-                    .addComponent(btnAccionA, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(382, Short.MAX_VALUE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAccionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAccionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(85, 85, 85)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAccionD, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(btnAccionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(120, 120, 120))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(btnAccionB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAccionC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAccionB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAccionD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAccionC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(55, 55, 55)
-                    .addComponent(btnAccionA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(171, Short.MAX_VALUE)))
+                    .addComponent(btnAccionA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -103,14 +122,14 @@ public class MenuVista extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(255, 255, 255))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addComponent(jLabel1)
                 .addContainerGap(104, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(233, 233, 233))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,6 +155,11 @@ public class MenuVista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +191,7 @@ public class MenuVista extends javax.swing.JFrame {
     private javax.swing.JButton btnAccionB;
     private javax.swing.JButton btnAccionC;
     private javax.swing.JButton btnAccionD;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;

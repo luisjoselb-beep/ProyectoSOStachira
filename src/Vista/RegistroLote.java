@@ -44,10 +44,10 @@ public class RegistroLote extends javax.swing.JFrame {
         cmbTipo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         checkEnvio = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAlternar = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -112,35 +112,35 @@ public class RegistroLote extends javax.swing.JFrame {
         checkEnvio.setForeground(new java.awt.Color(255, 255, 255));
         checkEnvio.setText("Confirmar");
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Alternar Estado Envio");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAlternar.setBackground(new java.awt.Color(51, 102, 255));
+        btnAlternar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnAlternar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAlternar.setText("Alternar Estado Envio");
+        btnAlternar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAlternarActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Atrás");
+        btnAtras.setBackground(new java.awt.Color(255, 0, 0));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtras.setText("Atrás");
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 102));
-        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Mostrar Registro");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrar.setBackground(new java.awt.Color(0, 0, 102));
+        btnMostrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnMostrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrar.setText("Mostrar Registro");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnMostrarActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 102));
-        jButton4.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Registrar Lote");
+        btnRegistrar.setBackground(new java.awt.Color(0, 0, 102));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Registrar Lote");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -172,14 +172,14 @@ public class RegistroLote extends javax.swing.JFrame {
                             .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(checkEnvio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jButton1)
-                        .addGap(91, 91, 91)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                        .addComponent(btnAlternar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(btnRegistrar)
+                        .addGap(72, 72, 72)
+                        .addComponent(btnMostrar)))
                 .addGap(30, 30, 30))
         );
         jPanel7Layout.setVerticalGroup(
@@ -211,14 +211,17 @@ public class RegistroLote extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(checkEnvio))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(btnAlternar))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(btnAtras)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -262,13 +265,13 @@ public class RegistroLote extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAlternarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlternarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAlternarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,12 +299,12 @@ public class RegistroLote extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlternar;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JCheckBox checkEnvio;
     private javax.swing.JComboBox<String> cmbTipo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
