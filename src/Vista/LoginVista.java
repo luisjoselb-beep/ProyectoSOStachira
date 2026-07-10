@@ -83,7 +83,7 @@ public class LoginVista extends javax.swing.JFrame {
             }
         });
 
-        txtPassword.setBackground(new java.awt.Color(51, 51, 255));
+        txtPassword.setBackground(new java.awt.Color(0, 102, 204));
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
