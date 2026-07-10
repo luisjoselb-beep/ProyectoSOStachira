@@ -32,10 +32,10 @@ public class MenuVista extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        btnAccionB = new javax.swing.JButton();
+        btnGestionRecursos = new javax.swing.JButton();
         btnAccionA = new javax.swing.JButton();
         btnAccionD = new javax.swing.JButton();
-        btnAccionC = new javax.swing.JButton();
+        btnSectorAcopio = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,9 +55,14 @@ public class MenuVista extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnAccionB.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btnAccionB.setForeground(new java.awt.Color(0, 102, 255));
-        btnAccionB.setText("Gestión Recursos");
+        btnGestionRecursos.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnGestionRecursos.setForeground(new java.awt.Color(0, 102, 255));
+        btnGestionRecursos.setText("Gestión Recursos");
+        btnGestionRecursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGestionRecursosActionPerformed(evt);
+            }
+        });
 
         btnAccionA.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnAccionA.setForeground(new java.awt.Color(0, 102, 255));
@@ -67,9 +72,14 @@ public class MenuVista extends javax.swing.JFrame {
         btnAccionD.setForeground(new java.awt.Color(0, 102, 255));
         btnAccionD.setText("Inventario General");
 
-        btnAccionC.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btnAccionC.setForeground(new java.awt.Color(0, 102, 255));
-        btnAccionC.setText("Sectores Acopio");
+        btnSectorAcopio.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnSectorAcopio.setForeground(new java.awt.Color(0, 102, 255));
+        btnSectorAcopio.setText("Sectores Acopio");
+        btnSectorAcopio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSectorAcopioActionPerformed(evt);
+            }
+        });
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 51));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -89,12 +99,12 @@ public class MenuVista extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAccionC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSectorAcopio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAccionA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(85, 85, 85)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAccionD, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(btnAccionB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnGestionRecursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(120, 120, 120))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -106,8 +116,8 @@ public class MenuVista extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAccionC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAccionB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSectorAcopio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGestionRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAccionD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,6 +171,22 @@ public class MenuVista extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnSectorAcopioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSectorAcopioActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        SectoresAcopio sectores = new SectoresAcopio();
+        sectores.setLocationRelativeTo(null);
+        sectores.setVisible(true);
+    }//GEN-LAST:event_btnSectorAcopioActionPerformed
+
+    private void btnGestionRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionRecursosActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        GestionRecursos gestion = new GestionRecursos();
+        gestion.setLocationRelativeTo(null);
+        gestion.setVisible(true);
+    }//GEN-LAST:event_btnGestionRecursosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -188,10 +214,10 @@ public class MenuVista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccionA;
-    private javax.swing.JButton btnAccionB;
-    private javax.swing.JButton btnAccionC;
     private javax.swing.JButton btnAccionD;
+    private javax.swing.JButton btnGestionRecursos;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSectorAcopio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;

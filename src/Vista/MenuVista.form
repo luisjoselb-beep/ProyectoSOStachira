@@ -114,13 +114,13 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnAccionC" max="32767" attributes="0"/>
+                          <Component id="btnSectorAcopio" max="32767" attributes="0"/>
                           <Component id="btnAccionA" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnAccionD" pref="148" max="32767" attributes="0"/>
-                          <Component id="btnAccionB" max="32767" attributes="0"/>
+                          <Component id="btnGestionRecursos" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
@@ -136,8 +136,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAccionC" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="btnAccionB" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnSectorAcopio" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnGestionRecursos" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -152,7 +152,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAccionB">
+            <Component class="javax.swing.JButton" name="btnGestionRecursos">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="12" style="0"/>
@@ -162,6 +162,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gesti&#xf3;n Recursos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGestionRecursosActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccionA">
               <Properties>
@@ -185,7 +188,7 @@
                 <Property name="text" type="java.lang.String" value="Inventario General"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnAccionC">
+            <Component class="javax.swing.JButton" name="btnSectorAcopio">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="12" style="0"/>
@@ -195,6 +198,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sectores Acopio"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSectorAcopioActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSalir">
               <Properties>
