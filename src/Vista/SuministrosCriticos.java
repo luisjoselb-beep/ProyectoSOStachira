@@ -57,7 +57,7 @@ public class SuministrosCriticos extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Registro de Lotes");
+        jLabel3.setText("Registro de Donación");
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -177,7 +177,7 @@ public class SuministrosCriticos extends javax.swing.JFrame {
                         .addComponent(btnAlternar)
                         .addGap(91, 91, 91)
                         .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                         .addComponent(btnMostrar)))
                 .addGap(30, 30, 30))
         );
@@ -226,17 +226,17 @@ public class SuministrosCriticos extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(146, 146, 146)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(109, 109, 109))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(27, 27, 27)
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

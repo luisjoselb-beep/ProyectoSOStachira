@@ -67,10 +67,20 @@ public class MenuVista extends javax.swing.JFrame {
         btnAccionA.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnAccionA.setForeground(new java.awt.Color(0, 102, 255));
         btnAccionA.setText("Suministros Críticos");
+        btnAccionA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccionAActionPerformed(evt);
+            }
+        });
 
         btnAccionD.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnAccionD.setForeground(new java.awt.Color(0, 102, 255));
         btnAccionD.setText("Inventario General");
+        btnAccionD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccionDActionPerformed(evt);
+            }
+        });
 
         btnSectorAcopio.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnSectorAcopio.setForeground(new java.awt.Color(0, 102, 255));
@@ -116,15 +126,15 @@ public class MenuVista extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSectorAcopio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGestionRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAccionD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGestionRecursos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAccionA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(58, 58, 58)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSectorAcopio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAccionD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -186,6 +196,22 @@ public class MenuVista extends javax.swing.JFrame {
         gestion.setLocationRelativeTo(null);
         gestion.setVisible(true);
     }//GEN-LAST:event_btnGestionRecursosActionPerformed
+
+    private void btnAccionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionAActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+        SuministrosCriticos suministro= new SuministrosCriticos();
+        suministro.setLocationRelativeTo(null);
+        suministro.setVisible(true);
+    }//GEN-LAST:event_btnAccionAActionPerformed
+
+    private void btnAccionDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionDActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+        InventarioGeneral inventario = new InventarioGeneral();
+        inventario.setLocationRelativeTo(null);
+        inventario.setVisible(true);
+    }//GEN-LAST:event_btnAccionDActionPerformed
 
     /**
      * @param args the command line arguments

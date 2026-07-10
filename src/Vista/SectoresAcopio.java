@@ -29,6 +29,9 @@ public class SectoresAcopio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel7 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         txtID1 = new javax.swing.JTextField();
@@ -45,13 +48,34 @@ public class SectoresAcopio extends javax.swing.JFrame {
         btnAtras = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 593, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel6.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel6.setForeground(new java.awt.Color(0, 102, 204));
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Registro de Lotes");
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Segoe UI Historic", 0, 19)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Debe registrar tres Lotes");
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -104,6 +128,11 @@ public class SectoresAcopio extends javax.swing.JFrame {
         btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnAtras.setForeground(new java.awt.Color(255, 255, 255));
         btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
 
         btnMostrar.setBackground(new java.awt.Color(0, 0, 102));
         btnMostrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -193,35 +222,8 @@ public class SectoresAcopio extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(btnAtras)
                         .addGap(67, 67, 67)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel6.setBackground(new java.awt.Color(0, 102, 204));
-        jPanel6.setForeground(new java.awt.Color(0, 102, 204));
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Registro de Lotes");
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Segoe UI Historic", 0, 19)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Debe registrar tres Lotes");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -230,12 +232,16 @@ public class SectoresAcopio extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel11))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(158, 158, 158)
+                                .addComponent(jLabel12)))
+                        .addGap(0, 177, Short.MAX_VALUE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +250,9 @@ public class SectoresAcopio extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -257,7 +265,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -268,6 +276,14 @@ public class SectoresAcopio extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+        MenuVista menu = new MenuVista();
+        menu.setLocationRelativeTo(null);
+        menu.setVisible(true);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments

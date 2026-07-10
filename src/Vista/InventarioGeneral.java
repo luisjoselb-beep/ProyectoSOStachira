@@ -108,6 +108,11 @@ public class InventarioGeneral extends javax.swing.JFrame {
         btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnAtras.setForeground(new java.awt.Color(255, 255, 255));
         btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
 
         btnMostrar.setBackground(new java.awt.Color(0, 0, 102));
         btnMostrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -151,7 +156,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
                     .addComponent(txtPeso1)
                     .addComponent(cmbTipo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkEnvio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
@@ -197,7 +202,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(btnAtras)
                         .addGap(67, 67, 67)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -215,8 +220,9 @@ public class InventarioGeneral extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,9 +233,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -238,6 +242,14 @@ public class InventarioGeneral extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        MenuVista menu = new MenuVista();
+        menu.setLocationRelativeTo(null);
+        menu.setVisible(true);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments

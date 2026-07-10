@@ -136,17 +136,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnSectorAcopio" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                           <Component id="btnGestionRecursos" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAccionD" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                           <Component id="btnAccionA" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnSectorAcopio" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btnAccionD" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btnSalir" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -176,6 +176,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Suministros Cr&#xed;ticos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAccionAActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccionD">
               <Properties>
@@ -187,6 +190,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inventario General"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAccionDActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSectorAcopio">
               <Properties>
