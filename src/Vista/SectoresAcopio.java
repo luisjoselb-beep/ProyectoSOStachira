@@ -113,7 +113,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
 
         cmbTipo1.setBackground(new java.awt.Color(0, 102, 204));
         cmbTipo1.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Medicamentos", "Herramientas" }));
+        cmbTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Alimentos", "Herramientas" }));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 204));

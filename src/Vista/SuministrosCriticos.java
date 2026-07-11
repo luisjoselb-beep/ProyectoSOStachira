@@ -95,7 +95,7 @@ public class SuministrosCriticos extends javax.swing.JFrame {
 
         cmbTipo.setBackground(new java.awt.Color(0, 102, 204));
         cmbTipo.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Medicamentos", "Herramientas" }));
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Alimentos", "Herramientas" }));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 102, 204));

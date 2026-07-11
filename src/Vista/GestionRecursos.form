@@ -31,7 +31,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -62,8 +65,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" pref="61" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="jPanel7" max="32767" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -115,12 +118,12 @@
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtDescripcion" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtDesc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtPeso" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="cmbTipo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="checkEnvio" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <Component id="comboTipo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="checkListo" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnAtras" min="-2" pref="81" max="-2" attributes="0"/>
@@ -153,7 +156,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDesc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -163,14 +166,14 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkListo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
@@ -182,7 +185,7 @@
                           <Component id="btnRegistrar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="btnLiberar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -241,7 +244,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre del Insumo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDescripcion">
+            <Component class="javax.swing.JTextField" name="txtDesc">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -283,7 +286,7 @@
                 <Property name="text" type="java.lang.String" value="Tipo de Ayuda"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cmbTipo">
+            <Component class="javax.swing.JComboBox" name="comboTipo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -294,7 +297,7 @@
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
                     <StringItem index="0" value="Medicina"/>
-                    <StringItem index="1" value="Medicamentos"/>
+                    <StringItem index="1" value="Alimentos"/>
                     <StringItem index="2" value="Herramientas"/>
                   </StringArray>
                 </Property>
@@ -314,7 +317,7 @@
                 <Property name="text" type="java.lang.String" value="Listo para Envio?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="checkEnvio">
+            <Component class="javax.swing.JCheckBox" name="checkListo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -375,6 +378,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Lote"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLiberar">
               <Properties>

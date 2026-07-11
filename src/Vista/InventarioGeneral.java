@@ -93,7 +93,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
 
         cmbTipo1.setBackground(new java.awt.Color(0, 102, 204));
         cmbTipo1.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Medicamentos", "Herramientas" }));
+        cmbTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Alimentos", "Herramientas" }));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 102, 204));
@@ -156,7 +156,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
                     .addComponent(txtPeso1)
                     .addComponent(cmbTipo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkEnvio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()

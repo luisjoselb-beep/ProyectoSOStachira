@@ -4,12 +4,15 @@
  */
 package Vista;
 
+import Controlador.ControladorGestion;
+
 /**
  *
  * @author Usuario
  */
 public class GestionRecursos extends javax.swing.JFrame {
     
+    private ControladorGestion controlador = new ControladorGestion();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GestionRecursos.class.getName());
 
     /**
@@ -17,10 +20,6 @@ public class GestionRecursos extends javax.swing.JFrame {
      */
     public GestionRecursos() {
         initComponents();
-        this.setSize(625, 458);
-        this.setPreferredSize(new java.awt.Dimension(625, 458));
-        this.setResizable(false); 
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -40,13 +39,13 @@ public class GestionRecursos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtDescripcion = new javax.swing.JTextField();
+        txtDesc = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtPeso = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        cmbTipo = new javax.swing.JComboBox<>();
+        comboTipo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        checkEnvio = new javax.swing.JCheckBox();
+        checkListo = new javax.swing.JCheckBox();
         btnAtras = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
@@ -83,8 +82,8 @@ public class GestionRecursos extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 102, 204));
         jLabel7.setText("Nombre del Insumo");
 
-        txtDescripcion.setBackground(new java.awt.Color(0, 102, 204));
-        txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        txtDesc.setBackground(new java.awt.Color(0, 102, 204));
+        txtDesc.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 204));
@@ -97,18 +96,18 @@ public class GestionRecursos extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 102, 204));
         jLabel9.setText("Tipo de Ayuda");
 
-        cmbTipo.setBackground(new java.awt.Color(0, 102, 204));
-        cmbTipo.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Medicamentos", "Herramientas" }));
+        comboTipo.setBackground(new java.awt.Color(0, 102, 204));
+        comboTipo.setForeground(new java.awt.Color(255, 255, 255));
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Alimentos", "Herramientas" }));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 102, 204));
         jLabel10.setText("Listo para Envio?");
 
-        checkEnvio.setBackground(new java.awt.Color(0, 102, 204));
-        checkEnvio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        checkEnvio.setForeground(new java.awt.Color(255, 255, 255));
-        checkEnvio.setText("Confirmar");
+        checkListo.setBackground(new java.awt.Color(0, 102, 204));
+        checkListo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkListo.setForeground(new java.awt.Color(255, 255, 255));
+        checkListo.setText("Confirmar");
 
         btnAtras.setBackground(new java.awt.Color(255, 0, 0));
         btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -134,6 +133,11 @@ public class GestionRecursos extends javax.swing.JFrame {
         btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar Lote");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         btnLiberar.setBackground(new java.awt.Color(51, 102, 255));
         btnLiberar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -167,12 +171,12 @@ public class GestionRecursos extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtDescripcion)
+                            .addComponent(txtDesc)
                             .addComponent(txtID)
                             .addComponent(txtNombre)
                             .addComponent(txtPeso)
-                            .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(checkEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(comboTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(checkListo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -197,7 +201,7 @@ public class GestionRecursos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -205,13 +209,13 @@ public class GestionRecursos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(checkEnvio))
+                            .addComponent(checkListo))
                         .addGap(26, 26, 26))
                     .addComponent(btnAtras, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -219,7 +223,7 @@ public class GestionRecursos extends javax.swing.JFrame {
                     .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLiberar))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -237,8 +241,8 @@ public class GestionRecursos extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,7 +253,9 @@ public class GestionRecursos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,10 +263,18 @@ public class GestionRecursos extends javax.swing.JFrame {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
+        String info = controlador.obtenerInfoRegistros();
+        if (info == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No hay datos para mostrar.");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, info);
+        }
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnLiberarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberarActionPerformed
         // TODO add your handling code here:
+        controlador.limpiarMemoria();
+        javax.swing.JOptionPane.showMessageDialog(this, "Memoria liberada exitosamente. Revisa la consola.");
     }//GEN-LAST:event_btnLiberarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -270,6 +284,23 @@ public class GestionRecursos extends javax.swing.JFrame {
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        try {
+               controlador.registrarLotes(
+                txtID.getText(), 
+                txtNombre.getText(), 
+                txtDesc.getText(), 
+                Double.parseDouble(txtPeso.getText()), 
+                comboTipo.getSelectedItem().toString(), 
+                checkListo.isSelected()
+            );
+            javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso. Revisa la consola.");
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número.");
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,8 +332,8 @@ public class GestionRecursos extends javax.swing.JFrame {
     private javax.swing.JButton btnLiberar;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.JCheckBox checkEnvio;
-    private javax.swing.JComboBox<String> cmbTipo;
+    private javax.swing.JCheckBox checkListo;
+    private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
@@ -312,7 +343,7 @@ public class GestionRecursos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtDesc;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPeso;

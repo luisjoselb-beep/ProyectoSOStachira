@@ -80,11 +80,16 @@ public class SuministroEmergencia {
         
     }
     
-    public void mostrarFichaLogistica(){
-        
+    public String mostrarFichaLogistica(){
+        return "ID: " + idLote + 
+           " | Insumo: " + nombreInsumo + 
+           " | Descripción: " + descripcionUso + 
+           " | Peso: " + pesoKg + "kg" +
+           " | Tipo: " + tipoAyuda + 
+           " | ¿Listo?: " + (listoParaEnvio ? "Sí" : "No");
     }
     
     public void alternarEstadoEnvio(){
-    
+        this.listoParaEnvio = !this.listoParaEnvio;
     }    
 }
