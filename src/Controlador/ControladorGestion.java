@@ -10,25 +10,22 @@ public class ControladorGestion {
     public void registrarLotes(String id, String nombre, String desc, double peso, String tipo, boolean listo) {
         
         // 1. OBJETO POR DEFECTO:
-        // Se construye vacío y se llena con los datos dinámicos que el usuario escribe en la interfaz.
+        // Ahora usamos el método que creamos en el modelo en lugar de 6 setters.
         envioInmediato = new SuministroEmergencia();
-        envioInmediato.setIdLote(id);
-        envioInmediato.setNombreInsumo(nombre);
-        envioInmediato.setDescripcionUso(desc);
-        envioInmediato.setPesoKg(peso);
-        envioInmediato.setTipoAyuda(tipo);
-        envioInmediato.setListoParaEnvio(listo);
+        envioInmediato.registrarLote(id, nombre, desc, peso, listo, tipo);
 
         // 2. OBJETO PARAMÉTRICO:
-        // Se construye usando el constructor paramétrico con los DATOS FIJOS de la práctica (Parte B).
+        // Este se mantiene igual, ya que usa el constructor paramétrico.
         pedidoEspecial = new SuministroEmergencia("MED003", "Kits Primeros Auxilios", "Vendas y alcohol", 5.2, true, "Medicina");
 
         // Consola: Verificación del registro
-        System.out.println("--- REGISTRO EXITOSO ---");
-        System.out.println("Por Defecto (Dinámico): " + envioInmediato.mostrarFichaLogistica());
-        System.out.println("Paramétrico (Fijo/Práctica): " + pedidoEspecial.mostrarFichaLogistica());
+        System.out.println("--- Registro Exitoso ---");
+        System.out.println("Por Defecto: " + envioInmediato.mostrarFichaLogistica());
+        System.out.println("Paramétrico: " + pedidoEspecial.mostrarFichaLogistica());
     }
 
+    // El resto de tus métodos (obtenerInfoRegistros y limpiarMemoria) 
+    // se quedan exactamente igual, ya que no dependen de cómo se asignaron los datos.
     public String obtenerInfoRegistros() {
         if (envioInmediato == null || pedidoEspecial == null) {
             return "No hay lotes registrados o la memoria fue liberada.";
@@ -38,11 +35,8 @@ public class ControladorGestion {
     }
 
     public void limpiarMemoria() {
-        // Al asignar null, eliminamos la referencia en el Stack.
-        // Esto permite que el Garbage Collector libere el espacio en el Heap.
         envioInmediato = null;
         pedidoEspecial = null;
-        
         System.out.println("--- MEMORIA LIBERADA: Objetos eliminados del Heap ---");
     }
 }

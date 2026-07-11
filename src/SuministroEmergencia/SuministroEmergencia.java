@@ -74,10 +74,14 @@ public class SuministroEmergencia {
         this.tipoAyuda = tipoAyuda;
     }
     
-    
-    
-    public void registrarLote(){
-        
+    // MÉTODO AGREGADO (Manteniendo tu estilo):
+    public void registrarLote(String id, String nombre, String desc, double peso, boolean listo, String tipo) {
+        this.idLote = id;
+        this.nombreInsumo = nombre;
+        this.descripcionUso = desc;
+        this.pesoKg = peso;
+        this.listoParaEnvio = listo;
+        this.tipoAyuda = tipo;
     }
     
     public String mostrarFichaLogistica(){
@@ -91,5 +95,5 @@ public class SuministroEmergencia {
     
     public void alternarEstadoEnvio(){
         this.listoParaEnvio = !this.listoParaEnvio;
-    }    
+    }   
 }
