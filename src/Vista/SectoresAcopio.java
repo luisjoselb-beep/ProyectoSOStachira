@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.ControladorSectores;
+
 /**
  *
  * @author Usuario
@@ -11,7 +13,8 @@ package Vista;
 public class SectoresAcopio extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SectoresAcopio.class.getName());
-
+    private ControladorSectores controlador = new ControladorSectores();
+    private int indice = 0; // Controla qué posición del arreglo estamos llenando
     /**
      * Creates new form SectoresAcopio
      */
@@ -148,6 +151,11 @@ public class SectoresAcopio extends javax.swing.JFrame {
         btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar Lote");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -275,6 +283,14 @@ public class SectoresAcopio extends javax.swing.JFrame {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
+        int faltantes = controlador.getCantidadFaltante();
+    
+        if (faltantes > 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Aún faltan " + faltantes + " lotes por registrar.");
+        } else {
+            String reporte = controlador.obtenerReporteCompleto();
+            javax.swing.JOptionPane.showMessageDialog(this, reporte);
+        }
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -285,6 +301,41 @@ public class SectoresAcopio extends javax.swing.JFrame {
         menu.setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        try { // Agrega esto para capturar errores de formato
+            if (indice < 3) {
+                String id = txtID1.getText();
+                String nombre = txtNombre1.getText();
+                String desc = txtDescripcion1.getText();
+                double peso = Double.parseDouble(txtPeso1.getText()); // Esto puede lanzar error si escriben letras
+                String tipo = (String) cmbTipo1.getSelectedItem();
+                boolean listo = checkEnvio1.isSelected();
+
+                controlador.registrarLoteEnSector(indice, id, nombre, desc, peso, listo, tipo);
+                indice++;
+
+                if (indice == 3) {
+                    btnRegistrar.setEnabled(false);
+                    javax.swing.JOptionPane.showMessageDialog(this, "Sector lleno. Ya puede mostrar el reporte.");
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Registrado. Faltan: " + (3 - indice));
+                }
+                limpiarCampos();
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número válido.");
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+    
+    private void limpiarCampos() {
+        txtID1.setText("");
+        txtNombre1.setText("");
+        txtDescripcion1.setText("");
+        txtPeso1.setText("");
+        checkEnvio1.setSelected(false);
+        txtID1.requestFocus(); // Pone el cursor en el primer campo de nuevo
+    }
     /**
      * @param args the command line arguments
      */
