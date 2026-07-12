@@ -85,7 +85,7 @@ public class SuministroEmergencia {
     }
     
     public String mostrarFichaLogistica(){
-        return "ID: " + idLote + 
+        return "ID: " + idLote +
            " | Insumo: " + nombreInsumo + 
            " | Descripción: " + descripcionUso + 
            " | Peso: " + pesoKg + "kg" +

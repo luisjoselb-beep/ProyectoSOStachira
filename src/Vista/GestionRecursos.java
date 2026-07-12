@@ -177,7 +177,7 @@ public class GestionRecursos extends javax.swing.JFrame {
                             .addComponent(txtPeso)
                             .addComponent(comboTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(checkListo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(btnLiberar)
@@ -230,18 +230,18 @@ public class GestionRecursos extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel11)
-                .addContainerGap(168, Short.MAX_VALUE))
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(148, 148, 148))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -253,9 +253,7 @@ public class GestionRecursos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -264,17 +262,21 @@ public class GestionRecursos extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         String info = controlador.obtenerInfoRegistros();
-        if (info == null) {
-            javax.swing.JOptionPane.showMessageDialog(this, "No hay datos para mostrar.");
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, info);
-        }
+        MostrarFicha ventana = new MostrarFicha();
+    
+        // 3. Enviamos el texto al JTextArea de la ventana
+        ventana.configurarTexto(info);
+
+        // 4. Configuramos el cierre y mostramos
+        ventana.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        ventana.setLocationRelativeTo(null); // Centra la ventana
+        ventana.setVisible(true);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnLiberarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberarActionPerformed
         // TODO add your handling code here:
         controlador.limpiarMemoria();
-        javax.swing.JOptionPane.showMessageDialog(this, "Memoria liberada exitosamente. Revisa la consola.");
+        javax.swing.JOptionPane.showMessageDialog(this, "Memoria liberada exitosamente. Revisa la consola.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLiberarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -296,9 +298,13 @@ public class GestionRecursos extends javax.swing.JFrame {
                 comboTipo.getSelectedItem().toString(), 
                 checkListo.isSelected()
             );
-            javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso. Revisa la consola.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso. Revisa la consola.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            txtID.setText("");
+            txtNombre.setText("");
+            txtDesc.setText("");
+            txtPeso.setText("");
         } catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

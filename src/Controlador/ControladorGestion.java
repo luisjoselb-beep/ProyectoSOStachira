@@ -30,8 +30,8 @@ public class ControladorGestion {
         if (envioInmediato == null || pedidoEspecial == null) {
             return "No hay lotes registrados o la memoria fue liberada.";
         }
-        return "--- REGISTRO POR DEFECTO (Dinámico) ---\n" + envioInmediato.mostrarFichaLogistica() + 
-               "\n\n--- REGISTRO PARAMÉTRICO (Fijo Parte B) ---\n" + pedidoEspecial.mostrarFichaLogistica();
+        return "--- REGISTRO POR DEFECTO (Dinámico) ---\n" + envioInmediato.mostrarFichaLogistica().replace("|", "\n") + "\n" + 
+               "\n\n--- REGISTRO PARAMÉTRICO (Fijo Parte B) ---\n" + pedidoEspecial.mostrarFichaLogistica().replace("|", "\n") + "\n";
     }
 
     public void limpiarMemoria() {

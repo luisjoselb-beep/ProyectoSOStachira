@@ -60,7 +60,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGap(0, 622, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,7 +73,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Registro de Lotes");
+        jLabel11.setText("Sector de Alimentos");
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Segoe UI Historic", 0, 19)); // NOI18N
@@ -188,11 +188,11 @@ public class SectoresAcopio extends javax.swing.JFrame {
                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnRegistrar)
                 .addGap(101, 101, 101)
                 .addComponent(btnMostrar)
-                .addGap(98, 98, 98))
+                .addGap(119, 119, 119))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,26 +230,23 @@ public class SectoresAcopio extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(btnAtras)
                         .addGap(67, 67, 67)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addComponent(jLabel11))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(158, 158, 158)
-                                .addComponent(jLabel12)))
-                        .addGap(0, 177, Short.MAX_VALUE))
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(200, 200, 200))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(123, 123, 123))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,8 +256,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,10 +282,18 @@ public class SectoresAcopio extends javax.swing.JFrame {
         int faltantes = controlador.getCantidadFaltante();
     
         if (faltantes > 0) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Aún faltan " + faltantes + " lotes por registrar.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Aún faltan " + faltantes + " lotes por registrar.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } else {
-            String reporte = controlador.obtenerReporteCompleto();
-            javax.swing.JOptionPane.showMessageDialog(this, reporte);
+            String info = controlador.obtenerReporteCompleto();
+            MostrarFicha ventana = new MostrarFicha();
+    
+            // 3. Enviamos el texto al JTextArea de la ventana
+            ventana.configurarTexto(info);
+
+            // 4. Configuramos el cierre y mostramos
+            ventana.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            ventana.setLocationRelativeTo(null); // Centra la ventana
+            ventana.setVisible(true);
         }
     }//GEN-LAST:event_btnMostrarActionPerformed
 
@@ -317,14 +321,14 @@ public class SectoresAcopio extends javax.swing.JFrame {
 
                 if (indice == 3) {
                     btnRegistrar.setEnabled(false);
-                    javax.swing.JOptionPane.showMessageDialog(this, "Sector lleno. Ya puede mostrar el reporte.");
+                    javax.swing.JOptionPane.showMessageDialog(this, "Sector lleno. Ya puede mostrar el reporte.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Registrado. Faltan: " + (3 - indice));
+                    javax.swing.JOptionPane.showMessageDialog(this, "Registrado. Faltan: " + (3 - indice), "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 }
                 limpiarCampos();
             }
         } catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número válido.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número válido.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
     

@@ -11,9 +11,9 @@ public class LoginVista extends javax.swing.JFrame {
 
     public LoginVista() {
         initComponents();
+        this.setLocationRelativeTo(null);
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-//Holaaaaa
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -11,6 +11,7 @@ package Vista;
 public class SuministrosCriticos extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SuministrosCriticos.class.getName());
+    private Controlador.ControladorSuministros controlador = new Controlador.ControladorSuministros();
 
     /**
      * Creates new form RegistroLote
@@ -67,6 +68,11 @@ public class SuministrosCriticos extends javax.swing.JFrame {
 
         txtID.setBackground(new java.awt.Color(0, 102, 224));
         txtID.setForeground(new java.awt.Color(255, 255, 255));
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
@@ -140,6 +146,11 @@ public class SuministrosCriticos extends javax.swing.JFrame {
         btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar Lote");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -177,14 +188,14 @@ public class SuministrosCriticos extends javax.swing.JFrame {
                         .addComponent(btnAlternar)
                         .addGap(91, 91, 91)
                         .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(btnMostrar)))
                 .addGap(30, 30, 30))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -209,15 +220,16 @@ public class SuministrosCriticos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(checkEnvio))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAlternar)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(checkEnvio)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(btnAtras)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15)))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnAlternar)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -256,10 +268,29 @@ public class SuministrosCriticos extends javax.swing.JFrame {
 
     private void btnAlternarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlternarActionPerformed
         // TODO add your handling code here:
+        controlador.alternarPrioritario();
+        javax.swing.JOptionPane.showMessageDialog(this, "Estado del Lote Prioritario alternado. Verifica en 'Mostrar Registro'.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAlternarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
+        // 1. Obtenemos el texto del controlador
+        String info = controlador.obtenerResumen();
+        
+        System.out.println("--- REPORTE LOGÍSTICO ACTUALIZADO ---");
+        System.out.println(info);
+        System.out.println("-------------------------------------");
+
+        // 2. Creamos la instancia
+        MostrarFicha ventanaFicha = new MostrarFicha();
+
+        // 3. Enviamos el texto
+        ventanaFicha.configurarTexto(info);
+
+        // 4. Configuramos la ventana
+        ventanaFicha.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        ventanaFicha.setLocationRelativeTo(null);
+        ventanaFicha.setVisible(true);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -269,6 +300,27 @@ public class SuministrosCriticos extends javax.swing.JFrame {
         menu.setLocationRelativeTo(null);
         menu.setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        try {
+            controlador.registrarDonacion(
+                txtID.getText(), 
+                txtNombre.getText(), 
+                txtDescripcion.getText(), 
+                Double.parseDouble(txtPeso.getText()), 
+                cmbTipo.getSelectedItem().toString(), 
+                checkEnvio.isSelected()
+            );
+            javax.swing.JOptionPane.showMessageDialog(this, "Donación registrada exitosamente.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: El peso debe ser un número válido.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
 
     /**
      * @param args the command line arguments

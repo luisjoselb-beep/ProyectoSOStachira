@@ -19,7 +19,15 @@ public class ControladorSectores {
         String reporte = "--- REPORTES SECTOR ALIMENTOS ---\n";
         for (int i = 0; i < sectorAlimentos.length; i++) {
             if (sectorAlimentos[i] != null) {
-                reporte += "Lote " + (i + 1) + ": " + sectorAlimentos[i].mostrarFichaLogistica() + "\n";
+                reporte += "LOTE #" + (i) + "\n";
+        reporte += "----------------------------\n";
+        reporte += "ID: " + sectorAlimentos[i].getIdLote() + "\n";
+        reporte += "Nombre: " + sectorAlimentos[i].getNombreInsumo() + "\n";
+        reporte += "Descripción: " + sectorAlimentos[i].getDescripcionUso() + "\n";
+        reporte += "Peso: " + sectorAlimentos[i].getPesoKg() + " kg\n";
+        reporte += "Tipo: " + sectorAlimentos[i].getTipoAyuda() + "\n";
+        reporte += "Envío: " + (sectorAlimentos[i].isListoParaEnvio() ? "Sí" : "No") + "\n";
+        reporte += "----------------------------\n\n";
             }
         }
         return reporte;
