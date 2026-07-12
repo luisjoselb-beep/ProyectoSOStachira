@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
 import Controlador.ControladorGestion;
 
-/**
- *
- * @author Usuario
- */
 public class GestionRecursos extends javax.swing.JFrame {
     
     private ControladorGestion controlador = new ControladorGestion();
@@ -52,7 +44,8 @@ public class GestionRecursos extends javax.swing.JFrame {
         btnLiberar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(621, 438));
+        setPreferredSize(new java.awt.Dimension(622, 485));
+        setResizable(false);
 
         jPanel6.setBackground(new java.awt.Color(0, 102, 204));
         jPanel6.setForeground(new java.awt.Color(0, 102, 204));
@@ -177,7 +170,7 @@ public class GestionRecursos extends javax.swing.JFrame {
                             .addComponent(txtPeso)
                             .addComponent(comboTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(checkListo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(btnLiberar)

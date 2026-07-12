@@ -188,7 +188,7 @@ public class SuministrosCriticos extends javax.swing.JFrame {
                         .addComponent(btnAlternar)
                         .addGap(91, 91, 91)
                         .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addComponent(btnMostrar)))
                 .addGap(30, 30, 30))
         );
