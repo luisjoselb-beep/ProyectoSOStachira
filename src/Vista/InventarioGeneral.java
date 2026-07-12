@@ -10,14 +10,12 @@ public class InventarioGeneral extends javax.swing.JFrame {
      */
     
     private void verificarEstadoInventario() {
-    // Si está lleno, habilitamos el botón, si no, lo dejamos deshabilitado
     btnMostrar.setEnabled(controlador.estaLleno());
     btnModificar.setEnabled(controlador.estaLleno());
 }
     public InventarioGeneral() {
         initComponents();
         this.setLocationRelativeTo(null);
-        // Al abrir, el botón debe estar deshabilitado inicialmente
         btnMostrar.setEnabled(false); 
         btnModificar.setEnabled(false);
     }
@@ -50,6 +48,9 @@ public class InventarioGeneral extends javax.swing.JFrame {
         btnMostrar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -108,10 +109,9 @@ public class InventarioGeneral extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(0, 102, 204));
         jLabel18.setText("Listo para Envío?");
 
-        checkEnvio1.setBackground(new java.awt.Color(0, 102, 204));
+        checkEnvio1.setBackground(new java.awt.Color(255, 255, 255));
         checkEnvio1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkEnvio1.setForeground(new java.awt.Color(255, 255, 255));
-        checkEnvio1.setText("Confirmar");
 
         btnAtras.setBackground(new java.awt.Color(255, 0, 0));
         btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -153,6 +153,10 @@ public class InventarioGeneral extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel1.setText("Confirmar");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -181,7 +185,10 @@ public class InventarioGeneral extends javax.swing.JFrame {
                             .addComponent(txtNombre1)
                             .addComponent(txtPeso1)
                             .addComponent(cmbTipo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(checkEnvio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(checkEnvio1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -217,18 +224,24 @@ public class InventarioGeneral extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(cmbTipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(checkEnvio1)
-                    .addComponent(btnAtras))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel18)
+                        .addComponent(checkEnvio1)
+                        .addComponent(btnAtras))
+                    .addComponent(jLabel1))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMostrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnModificar)
                         .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Logo en blanco total final.png"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Logo en blanco total final.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -236,18 +249,35 @@ public class InventarioGeneral extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)))
+                .addGap(3, 3, 3)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -295,14 +325,15 @@ public class InventarioGeneral extends javax.swing.JFrame {
         );
 
         if (guardado) {
+            System.out.println("AVISO: Lote registrado exitosamente con ID: " + txtID1.getText());
             javax.swing.JOptionPane.showMessageDialog(this, "Lote registrado con éxito.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             verificarEstadoInventario();
-            // Limpiar campos después de registrar
             txtID1.setText("");
             txtNombre1.setText("");
             txtDescripcion1.setText("");
             txtPeso1.setText("");
         } else {
+            System.err.println("AVISO: Intento de registro fallido (inventario lleno).");
             javax.swing.JOptionPane.showMessageDialog(this, "Error: Capacidad máxima del inventario alcanzada.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     } catch (NumberFormatException e) {
@@ -317,7 +348,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
         if (input != null && !input.trim().isEmpty()) {
             controlador.inicializarInventario(Integer.parseInt(input));
         } else {
-            this.dispose(); // Cierra la ventana si el usuario cancela
+            this.dispose();
             MenuVista menu = new MenuVista();
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
@@ -333,23 +364,26 @@ public class InventarioGeneral extends javax.swing.JFrame {
         int totalRegistrados = controlador.getContador();
         
         String input = javax.swing.JOptionPane.showInputDialog(this, 
-            "Ingrese el índice del lote a modificar (0 a " + (controlador.getContador() - 1) + "):", "Modificación por índice", javax.swing.JOptionPane.QUESTION_MESSAGE);
+            "Ingrese el índice del lote a modificar (1 a " + totalRegistrados + "):", "Modificación por índice", javax.swing.JOptionPane.QUESTION_MESSAGE);
 
-    try {
-        if (input != null && !input.trim().isEmpty()) {
-            int indice = Integer.parseInt(input);
-            
-            // Validación de límites: el usuario no puede pedir un índice mayor a los registrados
-            if (indice >= 0 && indice < totalRegistrados) {
-                controlador.alternarLote(indice);
-                javax.swing.JOptionPane.showMessageDialog(this, "Estado del Lote #" + indice + " alternado correctamente.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: Índice fuera de rango.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
+        try {
+            if (input != null && !input.trim().isEmpty()) {
+                int indice = Integer.parseInt(input);
+
+                int indiceReal = indice - 1;
+                if (indice >= 1 && indice <= totalRegistrados) {
+                    controlador.alternarLote(indiceReal);
+                    System.out.println("AVISO: El usuario solicitó modificar el Lote #" + indice);
+                    javax.swing.JOptionPane.showMessageDialog(this, "Estado del Lote #" + indice + " alternado correctamente.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    System.out.println("AVISO: El usuario ingresó un índice fuera de rango (" + indice + ")");
+                    javax.swing.JOptionPane.showMessageDialog(this, "Error: Índice fuera de rango.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
             }
+        } catch (NumberFormatException e) {
+            System.err.println("Error: El usuario debe ingresar un número válido." + input);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: Debe ingresar un número válido.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-    } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Error: Debe ingresar un número válido.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
@@ -384,6 +418,7 @@ public class InventarioGeneral extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JCheckBox checkEnvio1;
     private javax.swing.JComboBox<String> cmbTipo1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -391,6 +426,8 @@ public class InventarioGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField txtDescripcion1;

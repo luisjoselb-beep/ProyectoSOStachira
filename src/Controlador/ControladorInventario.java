@@ -4,7 +4,7 @@ import SuministroEmergencia.SuministroEmergencia;
 
 public class ControladorInventario {
     private SuministroEmergencia[] inventario;
-    private int contador = 0; // Para saber qué posición sigue
+    private int contador = 0;
 
     public void inicializarInventario(int tamaño) {
         inventario = new SuministroEmergencia[tamaño];
@@ -16,16 +16,16 @@ public class ControladorInventario {
             inventario[contador] = new SuministroEmergencia();
             inventario[contador].registrarLote(id, nombre, desc, peso, listo, tipo);
             contador++;
-            return true; // Registro exitoso
+            return true;
         }
-        return false; // Inventario lleno
+        return false;
     }
 
-    // AQUÍ USAS EL FOR PARA LISTAR (Como pediste)
     public String obtenerListadoCompleto() {
+        System.out.println("AVISO: Generando reporte completo de " + contador + " lotes.");
         String reporte = "--- INVENTARIO GENERAL ---\n";
-        for (int i = 0; i < contador; i++) { // Solo recorres lo que realmente se ha llenado
-            reporte += "LOTE #" + (i) + "\n";
+        for (int i = 0; i < contador; i++) {
+            reporte += "LOTE #" + (i+1) + "\n";
         reporte += "----------------------------\n";
         reporte += "ID: " + inventario[i].getIdLote() + "\n";
         reporte += "Nombre: " + inventario[i].getNombreInsumo() + "\n";
@@ -47,7 +47,12 @@ public class ControladorInventario {
     }
     
     public void alternarLote(int indice) {
-    // Aquí es donde el controlador usa el índice para encontrar el objeto correcto
+        
+    if (indice >= 0 && indice < contador) {
     inventario[indice].alternarEstadoEnvio(); 
-}
+    System.out.println("AVISO: Estado del lote en el índice " + indice + " ha sido cambiado.");
+    } else {
+        System.err.println("ERROR: Intento de modificar índice fuera de rango: " + indice);
+    }
+    }
 }

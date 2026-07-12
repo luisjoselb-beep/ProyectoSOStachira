@@ -73,8 +73,7 @@ public class SuministroEmergencia {
     public void setTipoAyuda(String tipoAyuda) {
         this.tipoAyuda = tipoAyuda;
     }
-    
-    // MÉTODO AGREGADO (Manteniendo tu estilo):
+
     public void registrarLote(String id, String nombre, String desc, double peso, boolean listo, String tipo) {
         this.idLote = id;
         this.nombreInsumo = nombre;
