@@ -15,7 +15,7 @@ public class ControladorSuministros {
     public void registrarDonacion(String id, String nombre, String desc, double peso, String tipo, boolean listo) {
         donacionReciente = new SuministroEmergencia();
         donacionReciente.registrarLote(id, nombre, desc, peso, listo, tipo);
-        System.out.println("[AVISO] Donación registrada en el sistema: " + id);
+        System.out.println("[AVISO] Donacion registrada en el sistema: " + id);
     }
 
     public void alternarPrioritario() {

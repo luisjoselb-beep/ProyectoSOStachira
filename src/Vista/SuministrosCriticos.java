@@ -290,7 +290,7 @@ public class SuministrosCriticos extends javax.swing.JFrame {
         // TODO add your handling code here:
         String info = controlador.obtenerResumen();
         
-        System.out.println("--- REPORTE LOGÍSTICO ACTUALIZADO ---");
+        System.out.println("--- REPORTE LOGISTICO ACTUALIZADO ---");
         System.out.println(info);
         System.out.println("-------------------------------------");
 

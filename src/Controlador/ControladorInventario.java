@@ -50,9 +50,9 @@ public class ControladorInventario {
         
     if (indice >= 0 && indice < contador) {
     inventario[indice].alternarEstadoEnvio(); 
-    System.out.println("AVISO: Estado del lote en el índice " + indice + " ha sido cambiado.");
+    System.out.println("AVISO: Estado del lote en el indice " + indice + " ha sido cambiado.");
     } else {
-        System.err.println("ERROR: Intento de modificar índice fuera de rango: " + indice);
+        System.err.println("ERROR: Intento de modificar indice fuera de rango: " + indice);
     }
     }
 }

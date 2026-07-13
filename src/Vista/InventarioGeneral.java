@@ -373,15 +373,15 @@ public class InventarioGeneral extends javax.swing.JFrame {
                 int indiceReal = indice - 1;
                 if (indice >= 1 && indice <= totalRegistrados) {
                     controlador.alternarLote(indiceReal);
-                    System.out.println("AVISO: El usuario solicitó modificar el Lote #" + indice);
+                    System.out.println("AVISO: El usuario solicito modificar el Lote #" + indice);
                     javax.swing.JOptionPane.showMessageDialog(this, "Estado del Lote #" + indice + " alternado correctamente.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    System.out.println("AVISO: El usuario ingresó un índice fuera de rango (" + indice + ")");
+                    System.out.println("AVISO: El usuario ingreso un indice fuera de rango (" + indice + ")");
                     javax.swing.JOptionPane.showMessageDialog(this, "Error: Índice fuera de rango.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
             }
         } catch (NumberFormatException e) {
-            System.err.println("Error: El usuario debe ingresar un número válido." + input);
+            System.err.println("Error: El usuario debe ingresar un numero valido." + input);
             javax.swing.JOptionPane.showMessageDialog(this, "Error: Debe ingresar un número válido.", "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
