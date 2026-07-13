@@ -278,19 +278,19 @@ public class GestionRecursos extends javax.swing.JFrame {
         String info = controlador.obtenerInfoRegistros();
         MostrarFicha ventana = new MostrarFicha();
     
-        // 3. Enviamos el texto al JTextArea de la ventana
+        // enviamos a la ventana
         ventana.configurarTexto(info);
 
-        // 4. Configuramos el cierre y mostramos
+        // muestra en pantalla(ventana)
         ventana.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        ventana.setLocationRelativeTo(null); // Centra la ventana
+        ventana.setLocationRelativeTo(null); 
         ventana.setVisible(true);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnLiberarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberarActionPerformed
         // TODO add your handling code here:
         controlador.limpiarMemoria();
-        javax.swing.JOptionPane.showMessageDialog(this, "Memoria liberada exitosamente. Revisa la consola.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "Memoria liberada exitosamente.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLiberarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -312,7 +312,7 @@ public class GestionRecursos extends javax.swing.JFrame {
                 comboTipo.getSelectedItem().toString(), 
                 checkListo.isSelected()
             );
-            javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso. Revisa la consola.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso.", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             txtID.setText("");
             txtNombre.setText("");
             txtDesc.setText("");

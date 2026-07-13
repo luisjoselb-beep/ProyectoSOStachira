@@ -86,10 +86,10 @@ public class SuministroEmergencia {
     public String mostrarFichaLogistica(){
         return "ID: " + idLote +
            " | Insumo: " + nombreInsumo + 
-           " | Descripción: " + descripcionUso + 
+           " | Descripcion: " + descripcionUso + 
            " | Peso: " + pesoKg + "kg" +
            " | Tipo: " + tipoAyuda + 
-           " | ¿Listo?: " + (listoParaEnvio ? "Sí" : "No");
+           " | Listo?: " + (listoParaEnvio ? "Si" : "No");
     }
     
     public void alternarEstadoEnvio(){

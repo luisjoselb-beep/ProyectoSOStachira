@@ -10,7 +10,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SectoresAcopio.class.getName());
     private ControladorSectores controlador = new ControladorSectores();
-    private int indice = 0; // Controla qué posición del arreglo estamos llenando
+    private int indice = 0; 
     /**
      * Creates new form SectoresAcopio
      */
@@ -300,12 +300,12 @@ public class SectoresAcopio extends javax.swing.JFrame {
             String info = controlador.obtenerReporteCompleto();
             MostrarFicha ventana = new MostrarFicha();
     
-            // 3. Enviamos el texto al JTextArea de la ventana
+            // evio de texto a la ventana
             ventana.configurarTexto(info);
 
-            // 4. Configuramos el cierre y mostramos
+            // muestra en ventana
             ventana.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-            ventana.setLocationRelativeTo(null); // Centra la ventana
+            ventana.setLocationRelativeTo(null); 
             ventana.setVisible(true);
         }
     }//GEN-LAST:event_btnMostrarActionPerformed
@@ -320,12 +320,12 @@ public class SectoresAcopio extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        try { // Agrega esto para capturar errores de formato
+        try {
             if (indice < 3) {
                 String id = txtID1.getText();
                 String nombre = txtNombre1.getText();
                 String desc = txtDescripcion1.getText();
-                double peso = Double.parseDouble(txtPeso1.getText()); // Esto puede lanzar error si escriben letras
+                double peso = Double.parseDouble(txtPeso1.getText());
                 String tipo = (String) cmbTipo1.getSelectedItem();
                 boolean listo = checkEnvio1.isSelected();
 
@@ -351,7 +351,7 @@ public class SectoresAcopio extends javax.swing.JFrame {
         txtDescripcion1.setText("");
         txtPeso1.setText("");
         checkEnvio1.setSelected(false);
-        txtID1.requestFocus(); // Pone el cursor en el primer campo de nuevo
+        txtID1.requestFocus(); 
     }
     /**
      * @param args the command line arguments
